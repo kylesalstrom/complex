@@ -25,12 +25,14 @@ class Fib extends Component {
     });
   }
 
+
   handleSubmit = async event => {
     event.preventDefault();
-
+    
     await axios.post('/api/values', {
       index: this.state.index
     });
+    this.fetchValues()
     this.setState({ index: '' });
   };
 
@@ -53,6 +55,7 @@ class Fib extends Component {
   }
 
   render() {
+    console.log('refresh');
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
