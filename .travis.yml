@@ -12,11 +12,11 @@ after_sucess:
     - docker build -t kylesalstrom/complex-client ./client
     - docker build -t kylesalstrom/complex-nginx ./nginx
     - docker build -t kylesalstrom/complex-server ./server
-    - docker build -t kylesalstrom/complex-worler ./worker
+    - docker build -t kylesalstrom/complex-worker ./worker
 
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
     - docker push kylesalstrom/complex-client
     - docker push kylesalstrom/complex-nginx
     - docker push kylesalstrom/complex-server
-    - docker push kylesalstrom/complex-worler
+    - docker push kylesalstrom/complex-worker
