@@ -1,0 +1,27 @@
+nginx
+    default.conf
+travis ci
+    push small project to elastic beanstalk (store amazon password from IAM)
+    or create larger multi container app, push to dockerhub tap aws services
+    .travis.yml
+aws
+    Elastic Beanstalk
+        webappdeploy
+        Dockerrun.aws.json
+    IAM
+        security policy
+    vpc
+        1 per region - opens up ports i choose
+    VPC - virtual private cloud
+        security group
+            lets those connections access whatever
+    rds
+        create any database container - used for postgres
+    elasticache
+        used for redis
+        free verison: t2.micro
+
+[{EB Instance} {RDS - Postgres} {EC - Redis}] <-PST ]|
+[{EB Instance} {RDS - Postgres} {EC - Redis}] <-MST  |}vpc &
+[{EB Instance} {RDS - Postgres} {EC - Redis}] <-CST  |}securitygroups
+[{EB Instance} {RDS - Postgres} {EC - Redis}] <-EST ]|
